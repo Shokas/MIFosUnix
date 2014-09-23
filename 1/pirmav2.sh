@@ -9,16 +9,13 @@ wc -l < /etc/passwd
 
 echo "Procesu skaicius pas kiekviena vartotoja:"
 for useris in $(cut -d ":" -f 1 /etc/passwd); do
-	echo -n $useris " "
 	
-	procesai=$(ps h -u $useris -o user | uniq -c | sed 's/[^0-9]//g')
-
+	procesai=$(ps h -u $useris -o user | uniq -c | sort -rn | sed 's/[^0-9]//g')
 	if [[ -z $procesai ]]; then
-    		echo "0"
+    		echo "0 "$useris 
 	else
-    		echo "$procesai"
+    		echo $procesai" "$useris
 	fi
-done
-
+done | sort -rn  | uniq -u
 echo "Daugiausiai procesu turintis vartotojas:"
-ps hax -o user | sort | uniq -c | sort -rn | head -1
+ps hax -o user | sort | uniq -c | sort -rn | head -2
