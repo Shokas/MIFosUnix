@@ -1,0 +1,13 @@
+Trumpai ir grubiai :)
+cat - pavercia duoemnis srautu
+sort - rusiavimas
+grep 'directory' - leidzia isrinkti reikalinga informacija is srauto
+sed - transformavimas
+tr - pasalina/pakeicia simbolius
+awk - ^galima pakeisti auksciau esancius
+ls - printina direktorija
+find - direktoriju medis
+wget, curl, GET - duomenu parsiuntimas is tinklo
+ps - darbui su procesais
+users - darbui su useriais
+uniq
